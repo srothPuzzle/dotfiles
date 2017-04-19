@@ -121,6 +121,9 @@ bindsym $mod+L exec --no-startup-id $Locker, mode "default"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $mod+Shift+F1 exec ~/.screenlayout/internal-monitor.sh
+bindsym $mod+Shift+F2 exec ~/.screenlayout/2-monitors.sh
+bindsym $mod+Shift+F3 exec ~/.screenlayout/2-monitors.sh
 
 #############################################
 #                  Workspaces               #
