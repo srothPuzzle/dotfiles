@@ -36,26 +36,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
-
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 450 -opacity "90" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "$font" -hlfg "#9575cd"
+# use rofi as dmenu replacement
+bindsym $mod+d         exec "rofi -show run"
+bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
+bindsym $mod+Tab       exec "rofi -show"
 
 #  Volume control, using pulse audio
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
@@ -120,7 +104,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Shift+F1 exec ~/.screenlayout/internal-monitor.sh
 bindsym $mod+Shift+F2 exec ~/.screenlayout/2-monitors.sh
-bindsym $mod+Shift+F3 exec ~/.screenlayout/2-monitors.sh
 
 #############################################
 #                  Workspaces               #
@@ -164,7 +147,7 @@ bindsym $mod+Control+Right    workspace next
 bindsym $mod+Shift+Prior      move container to workspace prev
 bindsym $mod+Shift+Next       move container to workspace next
 bindsym $mod+Shift+BackSpace  workspace back_and_forth
-bindsym $mod+Shift+b          move container to workspace back_and_forth 
+bindsym $mod+Shift+b          move container to workspace back_and_forth
 
 # workspaces on specific screens
 set $screen_internal   "eDP1"
@@ -235,6 +218,7 @@ exec --no-startup-id thunderbird
 exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 exec --no-startup-id redshift-gtk
+exec --no-startup-id numlockx on
 # exec --no-startup-id compton --config ~/.config/i3/compton.conf
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
