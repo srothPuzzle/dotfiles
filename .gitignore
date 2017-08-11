@@ -17,5 +17,8 @@ vimrc_local
 # ignore deoplete stuff
 *-rplugin*
 
+# ignore user specific stuff
+/config/gtk-3.0/bookmarks
+
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
