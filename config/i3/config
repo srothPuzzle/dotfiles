@@ -16,7 +16,7 @@ set $icon_font FontAwesome 11
 font pango:$font
 
 # Define Locker
-set $Locker i3lock -i '/home/apollari/Pictures/wallpapers/3-screens.png' && sleep 1
+set $Locker i3lock -i '/home/apollari/Pictures/lockscreen.png' && sleep 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -39,7 +39,7 @@ bindsym $mod+Shift+q kill
 # use rofi as dmenu replacement
 bindsym $mod+d         exec "rofi -show run"
 bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
-bindsym $mod+Tab       exec "rofi -show"
+bindsym $mod+Tab       exec "rofi -show window"
 
 #  Volume control, using pulse audio
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
