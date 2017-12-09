@@ -50,6 +50,11 @@ fi
 
 src
 
+source /usr/share/nvm/init-nvm.sh
 unset INIT_DIR
 export HOME=$HOME_DIR
 cd $HOME_DIR
+
+exec fish
+
+
