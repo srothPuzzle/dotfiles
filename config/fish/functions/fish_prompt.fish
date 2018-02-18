@@ -64,6 +64,8 @@ function fish_prompt --description 'Write out the prompt'
   else
     set_color -o green
   end
+
+  # printf '\u25B6 '
   printf '$ '
 
   set_color normal
