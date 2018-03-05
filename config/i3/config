@@ -194,6 +194,16 @@ for_window [instance="pavucontrol"] floating enable
 #############################################
 #                 Modes                     #
 #############################################
+# Screenshot menu
+set $mode_screenshot (f)ullscreen in cliboard and ~/Pictures/, (s)election 
+mode "$mode_screenshot" {
+    bindsym f exec --no-startup-id flameshot full -c -p ~/Pictures, mode "default"
+    bindsym s exec --no-startup-id flameshot gui -p ~/Pictures, mode "default"
+   
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Print mode "$mode_screenshot"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -246,7 +256,6 @@ exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-# exec --no-startup-id compton --config ~/.config/i3/compton.conf
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
