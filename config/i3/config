@@ -31,7 +31,8 @@ focus_follows_mouse no
 #############################################
 
 # start a terminal
-bindsym $mod+Return exec /usr/bin/termite
+#bindsym $mod+Return exec /usr/bin/termite
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -268,6 +269,7 @@ bar {
     position           top
     workspace_buttons  yes
     tray_output        DP1-1
+    tray_output        HDMI1
     tray_output        eDP1        # internal display 
     status_command     i3status -c ~/.config/i3/i3status.conf
     font               pango:$font, $icon_font
